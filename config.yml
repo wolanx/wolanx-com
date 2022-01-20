@@ -1,0 +1,4 @@
+baseURL: https://wolanx.com/
+languageCode: en-us
+title: wolanx's blog
+theme: hugo-book
