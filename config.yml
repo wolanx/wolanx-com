@@ -1,4 +1,13 @@
 baseURL: https://wolanx.com/
 languageCode: en-us
-title: wolanx's blog
+title: wolanx
 theme: hugo-book
+
+menu:
+  # before: []
+  after:
+    - name: "Github"
+      url: "https://github.com/wolanx"
+      weight: 10
+
+params:
