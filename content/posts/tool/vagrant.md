@@ -12,14 +12,14 @@ tags:
 自定义文件Vagrantfile实现环境重复利用 https://www.vagrantup.com/intro
 
 ## Install
-```sh
+```shell
 https://www.vagrantup.com/downloads
 # wget https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.msi
 ```
 
 ## Start
 
-```sh
+```shell
 vagrant init generic/alpine312  # https://vagrantcloud.com/search
 
 vagrant up --provider=hyperv    # start
@@ -32,7 +32,7 @@ vagrant destroy # delete
 
 ## Other
 
-```sh
+```shell
 vagrant box list                # list image
 vagrant global-status           # list vm
 vagrant destroy 1a2b3c4d
@@ -45,7 +45,7 @@ vagrant box add my/alpine312 hyperv.box
 
 ## Vagrantfile
 
-```ruby
+```shell
 # touch Vagrantfile
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/alpine312"

@@ -6,8 +6,24 @@ categories:
 tags:
 ---
 
-# 2019.04.04
-```sh
+## 2019-04-04 zst php:7.1.11
+
+> docker pull zx5435/php:7.1.10
+
+All version is small about `100mb`, quick to download and running fast.
+They are cover my work in everywhere, you can try it. include:
+
+- mysql
+- postgres
+- redis
+- mongo
+- apcu
+- gd
+- xdebug
+- bcmath
+- zip
+
+```shell
 FROM php:7.1.11-fpm-alpine
 
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
@@ -35,15 +51,17 @@ RUN curl https://getcomposer.org/composer.phar -o /usr/local/bin/composer \
 # docker build -f Dockerfile.php -t zx5435/php:7.1.11 .
 ```
 
-# 2019.03.07 error
-```text
+## 2019-03-07 amqp error
+
+```shell
 librabbitmq
 pecl install amqp
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
 
-# 2018.10.09 bitdata
-```sh
+## 2018-10-09 bitdata php:7.1.10
+
+```shell
 FROM php:7.1.10-fpm-alpine
 
 RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \

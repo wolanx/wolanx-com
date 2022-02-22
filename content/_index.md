@@ -5,28 +5,54 @@ type: docs
 
 # About me
 
-{{< columns >}}
-## Astris ipse furtiva
+- [github](https://github.com/wolanx)
+- [gitee](https://gitee.com/wolanx)
+- [csdn](https://blog.csdn.net/wolanx)
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
+
+## Technology stack
+
+{{< columns >}}
+
+### Backend
+
+- ★★★★★ python (web)
+- ★★★★☆ java (web)
+- ★★☆☆☆ go (cli)
+- ★★★★★ php ~~2018年以前~~
+- ★★☆☆☆ c (cli)
 
 <--->
 
-## Suis quot vota
+### Devops
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
+- ★★★★★ kubernetes
+- ★★★★★ docker
+- ★★★☆☆ service mesh
+- ★★★★★ cicd
 
 {{< /columns >}}
 
+{{< columns >}}
+
+### Fontend
+
+- ★★★★☆ react
+- ★★★★☆ vue ~~2017年以前~~
+- ★★★★☆ js jquery
+
+<--->
+
+### Other
+
+- ★★★☆☆ figma sketch 原型设计
+- ★☆☆☆☆ ps ai 多媒体中级 ~~2010年以前~~
+
+{{< /columns >}}
+
+> 5★ 非常自信；4★ 主流应用；3★ 平均水平；2★ 略微生疏；1★ 真生疏了
+
+
+## Github Stats
 
 ![image](https://github-readme-stats.vercel.app/api?username=wolanx&show_icons=true)
-
-
-## csdn
-
-[csdn](https://blog.csdn.net/wolanx)
-
