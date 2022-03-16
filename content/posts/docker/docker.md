@@ -16,9 +16,13 @@ tags:
 ### install
 
 ```shell
+# centos
 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum list docker-ce --showduplicates | sort -r
 sudo yum install -y docker-ce
+
+# debian
+https://docs.docker.com/engine/install/debian/
 
 # 开机启动
 systemctl status docker

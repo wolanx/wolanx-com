@@ -10,7 +10,7 @@ type: docs
 - [csdn](https://blog.csdn.net/wolanx)
 
 
-## Technology stack
+<!-- ## Technology stack
 
 {{< columns >}}
 
@@ -50,7 +50,7 @@ type: docs
 
 {{< /columns >}}
 
-> 5★ 非常自信；4★ 主流应用；3★ 平均水平；2★ 略微生疏；1★ 真生疏了
+> 5★ 熟练运用；4★ 主流应用；3★ 平均水平；2★ 略微生疏；1★ 真生疏了 -->
 
 
 ## Github Stats
