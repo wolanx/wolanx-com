@@ -13,9 +13,18 @@ categories:
 ### General
 
 #### Appearance
-- Show method separators
+- Show method separators 函数分割线
 
 ## Tools
+
+### External Tools
+
+pycharm black setting:
+```md
+Program: black
+Arguments: $FileName$
+Work dir: $FileDir$
+```
 
 ### Terminal
 C:\Git\bin\sh.exe --login -i

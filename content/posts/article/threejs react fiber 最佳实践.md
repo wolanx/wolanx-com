@@ -1,5 +1,5 @@
 ---
-title: threejs react fiber 实例演示
+title: threejs react fiber 最佳实践
 date: 2022-03-16 17:50:27
 categories:
   - csdn
@@ -8,10 +8,10 @@ tags:
 
 > https://blog.csdn.net/wolanx/article/details/123526472
 
-## threejs 使用 react 加速开发
+## Intro
 在使用的相当一段时间的 `threejs` 和 `react-three-fiber` 后，在中文资料环境极其匮乏的情况下，做个`极简·笔记式`的分享。目标是能让大家在 `最快` 的速度上手，且 `半·精通`
 
-## install
+## Install
 `npm install three @react-three/fiber` [官方文档](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
 
 ## Demo1 - 全局概览

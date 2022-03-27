@@ -28,7 +28,7 @@ apt-get install iputils-ping
 apt-get install apt-transport-https ca-certificates # https
 ```
 
-## vi bug
+## vi bug 方向键
 ```shell
 vi /etc/vim/vimrc.tiny
 set nocompatible
