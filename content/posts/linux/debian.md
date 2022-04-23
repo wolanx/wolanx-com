@@ -28,6 +28,13 @@ apt-get install iputils-ping
 apt-get install apt-transport-https ca-certificates # https
 ```
 
+## user
+```shell
+adduser new_user
+usermod -G sudo new_user # 将用户添加到sudo组中
+su - new_user
+```
+
 ## vi bug 方向键
 ```shell
 vi /etc/vim/vimrc.tiny
