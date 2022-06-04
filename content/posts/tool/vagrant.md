@@ -1,5 +1,5 @@
 ---
-title: vagrant
+title: 工程化虚拟机 vagrant
 date: 2022-01-10T12:00:00+08:00
 categories:
   - tool

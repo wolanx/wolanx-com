@@ -8,7 +8,7 @@ categories:
 ## clash
 
 ```shell
-# install
+# install win mac
 https://github.com/Fndroid/clash_for_windows_pkg/releases
 https://github.com/Fndroid/clash_for_windows_pkg/releases/download/0.19.12/Clash.for.Windows.Setup.0.19.12.exe
 D:\clash
