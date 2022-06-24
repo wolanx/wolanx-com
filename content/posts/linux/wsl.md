@@ -23,5 +23,5 @@ alias e='cd /mnt/e'
 alias z='cd /mnt/z'
 ```
 
-# fix
+## fix
 netsh winsock reset

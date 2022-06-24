@@ -41,3 +41,15 @@ vi /etc/vim/vimrc.tiny
 set nocompatible
 set backspace=2
 ```
+
+## ubuntu 加速
+```shell
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+sed 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+sed 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+
+sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
+
+apt update
+```
