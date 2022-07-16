@@ -45,3 +45,8 @@ License
 {{< tab "Linux" >}} # Linux Content {{< /tab >}}
 {{< tab "Windows" >}} # Windows Content {{< /tab >}}
 {{< /tabs >}}
+
+## 百度统计
+
+自定义 layouts/partials/docs/inject/footer.html
+
