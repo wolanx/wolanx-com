@@ -7,8 +7,44 @@ categories:
 
 ## sh
 
-Shell 教程 http://www.runoob.com/linux/linux-shell.html
-分享70个经典的 Shell 脚本面试题与答案 https://www.jb51.net/article/135168.htm
+- Shell 教程 http://www.runoob.com/linux/linux-shell.html
+- 分享70个经典的 Shell 脚本面试题与答案 https://www.jb51.net/article/135168.htm
+- 6条shell小技巧，让脚本显得不再业余 https://mp.weixin.qq.com/s/ixVK4ockNE46bTdmarsDHQ
+
+## 常用小技巧
+
+```shell
+#!/bin/bash
+set -o nounset # 变量必须存在
+set -o errexit # set -e
+
+# bash -n xxx # 检查语法
+set -o verbose # bash -v xxx
+set -o xtrace # bash -x xxx
+
+## 函数封装
+log () {
+  local prefix="[$(date +%Y/%m/%d\ %H:%M:%S)]:"
+  echo "${prefix} $@" >&2
+}
+log "INFO" "a message"
+
+## 函数封装
+ExactBashComments() {
+  egrep "^#"
+}
+cat /etc/hosts | ExactBashComments | wc
+comments=$(ExactBashComments < /etc/hosts)
+
+## 只读 默认值
+readonly DEFAULT_VAL=${DEFAULT_VAL:--99}
+echo $DEFAULT_VAL # -99
+
+## if
+if [[ 100 > "${DEFAULT_VAL}" ]]; then
+    echo 222
+fi
+```
 
 ## tsdb => csv => sql => influx => oss
 
