@@ -15,4 +15,4 @@ params:
   BookDateFormat: "2006-01-02 15:04:05"
 
   BookRepo: https://github.com/wolanx/blog
-  BookEditPath: edit/main
+  BookEditPath: blob/main

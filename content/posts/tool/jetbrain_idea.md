@@ -28,3 +28,12 @@ Work dir: $FileDir$
 
 ### Terminal
 C:\Git\bin\sh.exe --login -i
+
+## Code style
+
+### java style
+
+```text
+adapter for Eclipse Code Formatter
+https://github1s.com/alibaba/p3c/blob/master/p3c-formatter/eclipse-codestyle.xml
+```
