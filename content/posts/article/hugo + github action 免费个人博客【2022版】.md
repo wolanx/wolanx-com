@@ -119,7 +119,7 @@ jobs:
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/5f10bc070aff4e89b5132b19d1701394.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAeXVqaWUuemhhbw==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 ## 源码参考
-- [github.com/wolanx/blog](https://github.com/wolanx/blog)
+- [github.com/wolanx/wolanx-com](https://github.com/wolanx/wolanx-com)
 - [成品](https://wolanx.com)
 
 ## 总结

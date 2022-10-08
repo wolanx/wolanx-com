@@ -58,12 +58,14 @@ EOF
 
 ### timezone 时区问题
 ```shell
-TZ=utc-8
+# k8s.yml
 env:
   - name: TZ
     value: "utc-8"
 
-environment: TZ : "Asia/Shanghai"
+# docker-compose.yml
+environment:
+  - TZ=utc-8
 
 apk add tzdata --no-cache \
   && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
@@ -71,7 +73,7 @@ apk add tzdata --no-cache \
 #dpkg-reconfigure -f noninteractive tzdata
 ```
 
-## ops
+## ops - maintain
 
 ### log
 ```shell
@@ -106,3 +108,14 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.16.0 gc
 ### network
 iptables -t nat -L DOCKER -n --line-numbers
 iptables -nL -t nat
+
+
+## tools
+
+### ctop - container-top
+
+```shell
+# https://github.com/bcicen/ctop
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+```
