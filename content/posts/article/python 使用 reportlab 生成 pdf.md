@@ -1,9 +1,7 @@
 ---
 title: python 使用 reportlab 生成 pdf
 date: 2022-02-09T15:30:51+08:00
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > https://blog.csdn.net/wolanx/article/details/122828185

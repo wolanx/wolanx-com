@@ -1,8 +1,7 @@
 ---
 title: k8s
 date: 2019-10-10
-categories:
-  - docker
+categories: [docker]
 tags:
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: hugo + github action 免费个人博客【2022版】
 date: 2022-02-11T17:44:26+08:00
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > https://blog.csdn.net/wolanx/article/details/122857729

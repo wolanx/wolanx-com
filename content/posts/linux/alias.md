@@ -1,8 +1,7 @@
 ---
 title: alias
 date: 2022-01-19
-categories:
-  - linux
+categories: [linux]
 ---
 
 

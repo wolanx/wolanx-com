@@ -1,8 +1,7 @@
 ---
 title: python Dockerfile
 date: 2022-02-11T22:17:51+08:00
-categories:
-  - docker
+categories: [docker]
 tags:
 ---
 

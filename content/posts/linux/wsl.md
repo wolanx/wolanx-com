@@ -1,8 +1,7 @@
 ---
 title: wsl 工具 Linux 的 Windows 子系统
 date: 2019-05-08 09:59:30
-categories:
-  - linux
+categories: [linux]
 ---
 
 ## wsl

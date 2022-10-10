@@ -1,9 +1,7 @@
 ---
 title: pytorch mnist vgg16 错误记录
 date: 2022-05-06T20:01:16+08:00
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > https://blog.csdn.net/wolanx/article/details/124599294

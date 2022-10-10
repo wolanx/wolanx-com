@@ -1,8 +1,7 @@
 ---
 title: c demo
-date: 2015-02-13 20:43:41
-categories:
-  - clang
+date: 2015-02-13T20:43:41+08:00
+categories: [clang]
 tags:
 ---
 

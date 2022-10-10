@@ -1,9 +1,7 @@
 ---
 title: threejs react fiber 最佳实践
 date: 2022-03-16 17:50:27
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > https://blog.csdn.net/wolanx/article/details/123526472

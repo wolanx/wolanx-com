@@ -1,8 +1,7 @@
 ---
 title: clash 设置
 date: 2018-04-04 16:26:02
-categories:
-  - tool
+categories: [tool]
 ---
 
 ## clash

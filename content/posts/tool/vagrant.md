@@ -1,17 +1,17 @@
 ---
 title: 工程化虚拟机 vagrant
 date: 2022-01-10T12:00:00+08:00
-categories:
-  - tool
-  - linux
+categories: [tool, linux]
 tags:
 ---
 
 ## Intro
+
 快速可自定义的虚拟机，几行命令搞定，不用再设置一堆东西。
 自定义文件Vagrantfile实现环境重复利用 https://www.vagrantup.com/intro
 
 ## Install
+
 ```shell
 https://www.vagrantup.com/downloads
 # wget https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.msi

@@ -1,8 +1,7 @@
 ---
 title: k3s
 date: 2019-12-16
-categories:
-  - docker
+categories: [docker]
 tags:
 ---
 

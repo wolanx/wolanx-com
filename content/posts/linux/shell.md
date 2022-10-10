@@ -1,8 +1,7 @@
 ---
 title: shell 脚本
 date: 2017-12-13
-categories:
-  - linux
+categories: [linux]
 ---
 
 ## sh

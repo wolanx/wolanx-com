@@ -1,8 +1,7 @@
 ---
 title: debian
 date: 2021-06-18
-categories:
-  - linux
+categories: [linux]
 ---
 
 ## 加速

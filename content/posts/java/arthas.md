@@ -1,6 +1,7 @@
 ---
-title: Arthas
+title: Arthas - java debug
 date: 2022-01-27T20:10:57+08:00
+categories: [java]
 ---
 
 ## Intro

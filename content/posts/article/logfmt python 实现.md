@@ -1,9 +1,7 @@
 ---
 title: logfmt python 实现
 date: 2022-02-11T15:45:10+08:00
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > https://blog.csdn.net/wolanx/article/details/122733747

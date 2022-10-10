@@ -1,8 +1,7 @@
 ---
 title: redis
 date: 2018-05-03
-categories:
-  - db
+categories: [db]
 tags:
 ---
 
@@ -27,6 +26,7 @@ xlen x:topic:test
 ```
 
 ### java stream
+
 ```java
 public static void main(String[] args) {
     Jedis r = new Jedis("x.x.x.x", 6379);

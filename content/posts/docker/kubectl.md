@@ -1,8 +1,7 @@
 ---
 title: kubectl
 date: 2019-03-23
-categories:
-  - docker
+categories: [docker]
 tags:
 ---
 

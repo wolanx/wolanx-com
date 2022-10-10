@@ -1,9 +1,7 @@
 ---
 title: Markdown
 date: 2022-01-20
-categories:
-  - csdn
-tags:
+categories: [csdn]
 ---
 
 > From csdn
