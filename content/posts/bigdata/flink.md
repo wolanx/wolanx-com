@@ -1,7 +1,7 @@
 ---
 title: flink
 date: 2021-05-06T20:10:57+08:00
-categories: [java]
+categories: [bigdata]
 ---
 
 https://ci.apache.org/projects/flink/flink-docs-stable/zh/
