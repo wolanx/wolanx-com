@@ -252,19 +252,3 @@ Libraries -> JRE -> Edit -> Workspace default JRE
 ```
 
 # 06.hdfs应用-云存储系统4
-
-
-./ffmpeg.exe -list_devices true -f dshow -i dummy
-
-./ffmpeg.exe -f dshow -i video="screen-capture-recorder":audio="virtual-audio-capturer" ab.mp4
-./ffmpeg.exe -f dshow -i video="screen-capture-recorder" yo.mp4
-./ffmpeg.exe -f dshow -i audio="virtual-audio-capturer" yo.mp3
-
-
-./ffmpeg.exe -f dshow -i video="screen-capture-recorder" -f dshow -i audio="virtual-audio-capturer" 222.avi
-
-
-
-./ffmpeg.exe -list_devices true -f dshow -i test.mp4
-./ffmpeg.exe -f x11grab -s 842x676 -r 50 -i :0.0+228,213 test.mp4
-./ffmpeg.exe -vcodec mpeg4 -b 1000 -r 10 -g 300 test.avi
