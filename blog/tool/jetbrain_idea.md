@@ -1,0 +1,42 @@
+---
+title: idea
+date: 2017-09-25
+tags: [tool]
+---
+
+## doc
+
+- webstorm下调试react js程序(不是在chrome里) https://www.jianshu.com/p/87a5609c5f44
+
+## Editor
+
+### General
+
+#### Appearance
+
+- Show method separators 函数分割线
+
+## Tools
+
+### External Tools
+
+pycharm black setting:
+
+```md
+Program: black
+Arguments: $FileName$
+Work dir: $FileDir$
+```
+
+### Terminal
+
+C:\Git\bin\sh.exe --login -i
+
+## Code style
+
+### java style
+
+```text
+adapter for Eclipse Code Formatter
+https://github1s.com/alibaba/p3c/blob/master/p3c-formatter/eclipse-codestyle.xml
+```

@@ -1,5 +1,8 @@
 .idea
 
-public
-resources
-themes
+node_modules
+build
+
+# Generated files
+.docusaurus
+.cache-loader
