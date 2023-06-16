@@ -22,7 +22,8 @@ apt-get update -y
 apt-get install procps # top ps
 
 apt-get install net-tools
-apt-get install iputils-ping
+apt-get install iputils-ping # ping
+apt-get install dnsutils # nslookup
 
 apt-get install apt-transport-https ca-certificates # https
 ```
