@@ -43,19 +43,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          feedOptions: {type: null}
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -71,10 +64,10 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Wolanx',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        logo: {
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
+        },
         items: [
           {
             position: 'left',
@@ -101,16 +94,16 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Blog',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Tags',
+                to: '/blog/tags',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Community',
             items: [
               {
                 label: 'GitHub',

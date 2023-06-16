@@ -13,33 +13,29 @@ env:
 
 jobs:
   build:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: read
-    #   packages: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+        uses: actions/checkout@v3
+        #with:
+        #  submodules: true  # Fetch Hugo themes (true OR recursive)
+        #  fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: setup hugo
-        uses: peaceiris/actions-hugo@v2
+      - uses: actions/setup-node@v3
         with:
-          hugo-version: '0.92.0'
-          extended: true
+          node-version: 18
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: build
-        run: hugo --minify
+        run: yarn build
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./build
           cname: wolanx.com
