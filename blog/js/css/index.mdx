@@ -1,0 +1,65 @@
+---
+title: css
+date: 2015-01-11
+tags:
+- js
+---
+
+
+
+
+
+# doc
+
+- [x] CSS参考手册 [http://css.doyoe.com/](http://css.doyoe.com/)
+- [x] 网站负载和速度分析仪 [https://varvy.com/pagespeed/](https://varvy.com/pagespeed/)
+
+## jsx
+
+export const Highlight = ({children, color}) => (
+    <span
+        style={{
+            backgroundColor: color,
+            borderRadius: '20px',
+            color: '#fff',
+            padding: '10px',
+            cursor: 'pointer',
+        }}
+        onClick={() => {
+            alert(`You clicked the color ${color} with label ${children}`)
+        }}>
+    {children}
+  </span>
+);
+
+This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+
+This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+
+## 光晕效果
+
+
+export const GuangYun = () => {
+    function doUpdate(e) {
+        let r = 0
+        let isTransition = true
+        if (isTransition) {
+            let animateTime = setInterval(function () {
+                console.log(123);
+                if (r >= 153) {
+                    clearInterval(animateTime);
+                    isTransition = true;
+                } else {
+                    isTransition = false;
+                    r++;
+                    e.target.style.webkitMask = '-webkit-gradient(radial, 45 25, ' + r + ', 45 25, ' + (r + 15) + ', from(rgb(0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.2)), to(rgb(0, 0, 0)))'
+                }
+            }, 5);
+        }
+    }
+    return (
+        <div onMouseEnter={doUpdate} style={{width: 500, height: 500, background: '#ccc'}}>光晕 hover</div>
+    )
+}
+
+<GuangYun/>

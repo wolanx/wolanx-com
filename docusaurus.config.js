@@ -47,7 +47,7 @@ const config = {
         blog: {
           showReadingTime: true,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: 20,
           feedOptions: {type: null}
         },
         theme: {

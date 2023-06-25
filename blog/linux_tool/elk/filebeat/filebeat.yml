@@ -1,0 +1,45 @@
+filebeat.inputs:
+# - type: log
+#   enabled: false
+#   paths:
+#     - /var/log/*.log
+- type: log
+  fields:
+    appid: bitdata-web_php
+    scope: error
+  paths:
+    - /root/log/bitdata-web_php/logs/error.log*
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+  multiline.negate: true
+  multiline.match: after
+  multiline.timeout: 10s
+- type: log
+  fields:
+    appid: bitdata-web_rr
+    scope: access
+  paths:
+    - /root/log/bitdata-web_php/data/api::header-debug-*.log
+    - /root/log/bitdata-web_php/data/www::header-debug-*.log
+# - type: log
+#   fields:
+#     appid: bitdata-web_nginx
+#     scope: access
+#   paths:
+#     - /var/log/nginx/*access.log
+# - type: log
+#   fields:
+#     appid: bitdata-web_nginx
+#     scope: error
+#   paths:
+#     - /var/log/nginx/*error.log
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 3
+setup.kibana:
+
+output.logstash:
+  hosts: ["10.10.75.3:5044"]
