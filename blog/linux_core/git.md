@@ -53,8 +53,8 @@ git update-index --chmod=+x gradlew
 ## submodule
 
 ```sh
-git submodule add -f -b master git@47.100.245.85:php/center.git
-git submodule foreach git pull origin master
+git submodule add -f -b main git@github.com:wolanx/jii.git
+git submodule foreach git pull origin main
 
 # 已有git的初始
 git submodule init
