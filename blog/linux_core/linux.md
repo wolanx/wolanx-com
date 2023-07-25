@@ -416,7 +416,12 @@ cat /proc/sys/kernel/hostname
 
 # tcpdump
 
+- Tcpdump 看这一篇就够了 https://www.jianshu.com/p/e3292f4dcc99
+
 ```shell
+# 端口
+tcpdump -i eth0 port 61617 -w ~/tcpdump_61617.pcap
+
 sudo tcpdump 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)' -A -nn
 所以常用的选项也就这几个：
 tcpdump -D

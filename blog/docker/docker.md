@@ -71,6 +71,10 @@ EOF
 }
 ```
 
+### root
+
+docker exec -it --user=root 114 sh
+
 ### timezone 时区问题
 
 ```shell
