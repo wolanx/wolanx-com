@@ -5,7 +5,15 @@ tags:
   - js
 ---
 
-# cnpm
+# install
+
+```shell
+#官方编译过的二进制数据包安装
+wget https://nodejs.org/download/release/latest-v12.x/node-v12.13.1-linux-x64.tar.gz
+tar --strip-components 1 -xzvf node-v* -C /usr
+```
+
+## proxy
 
 ```sh
 npm config set registry http://registry.npm.taobao.org --global
@@ -15,7 +23,7 @@ yarn config set registry https://registry.npm.taobao.org/
 yarn
 ```
 
-# node 升级
+## node 升级
 
 ```shell
 npm install -g n
@@ -25,11 +33,38 @@ yum erase nodejs npm -y # 卸载旧版本的nodejs
 rpm -qa 'node|npm' | grep -v nodesource # 确认nodejs是否卸载干净
 ```
 
-# 官方编译过的二进制数据包安装
-
-wget https://nodejs.org/download/release/latest-v12.x/node-v12.13.1-linux-x64.tar.gz
-tar --strip-components 1 -xzvf node-v* -C /usr
-
 # npx
 
 npx webpack === ./node_modules/.bin/webpack
+
+# publish
+
+```shell
+npm loging
+npm publish --access public
+```
+
+# yarn
+
+```shell
+# dependencies
+yarn add @wolanx/react-netron
+# devDependencies
+yarn add -D rollup
+# delete
+yarn remove @wolanx/react-netron
+
+yarn link # lib path
+yarn link @wolanx/react-netron # proj path
+yarn unlink @wolanx/react-netron # proj path
+
+
+```
+
+# esbuild
+
+```shell
+npm install --save-exact esbuild
+
+esbuild src/test.js --bundle --outfile=dist/test.js
+```
