@@ -32,6 +32,11 @@ mima=_passphrase_
 openssl req -new -key private.key -out ssl.csr # 证书请求文件
 openssl x509 -req -days 3650 -in ssl.csr -signkey private.key -out ssl.crt # 证书文件
 openssl pkcs12 -export -inkey private.key -in ssl.crt -out ssl.pfx
+
+## pfx renew crt
+openssl pkcs12 -in ept-activemq.pfx -nocerts -out ept-activemq.key -nodes
+# copy crt to here
+openssl pkcs12 -export -out ept-activemq.pfx -inkey ept-activemq.key -in ept-activemq.crt
 ```
 
 # window pfx => https

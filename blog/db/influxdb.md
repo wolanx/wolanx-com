@@ -7,8 +7,10 @@ tags:
 
 # influxdb
 
+- tool download https://github.com/influxdata/influxdb/releases/tag/v1.8.10
 - py demo https://ts-uf68z3on142991o8b-grafana.influxdata.rds.aliyuncs.com:3000/?grundfos(Ab123456)
 - sql doc https://docs.influxdata.com/influxdb/v1.8/query_language/explore-data/
+- sql doc https://docs.influxdata.com/influxdb/v1.8/query_language/functions/
 
 docker run --restart=unless-stopped --name influxdb-1 -d -p 8086:8086 -v $PWD:/var/lib/influxdb influxdb
 
@@ -33,7 +35,7 @@ svc-influxdb:
 
 # 常用命令
 
-```sh
+```shell
 influx
 influx -ssl -host ts-uf68z3on142991o8b.influxdata.tsdb.aliyuncs.com -port 8086 -username grundfos -password Ab123456 -database gimc-perf
 influx -ssl -host ts-uf68z3on142991o8b.influxdata.tsdb.aliyuncs.com -port 8086 -username grundfos -password Ab123456 -database gimc-perf -precision rfc3339
@@ -41,7 +43,9 @@ influx -ssl -host ts-uf68z3on142991o8b.influxdata.tsdb.aliyuncs.com -port 8086 -
 auth
 show users
 show databases
+# show tables
 show MEASUREMENTS
+SHOW MEASUREMENTS ON "gimc-perf"
 
 # 设置time格式
 precision rfc3339
@@ -53,4 +57,25 @@ SELECT * FROM sensor where "deviceId"='sensor1'
 # tz https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 select * from sensor_0s tz('Asia/Shanghai')
 select * from sensor_0s tz('Etc/GMT-8')
+```
+
+## select
+
+```shell
+# 查 所有 tag
+show tag keys from sensor_0s;
+# 查 tag 下的 name
+show tag values from sensor_0s with key="SNO";
+# 查时间线
+SHOW SERIES ON "gimc-perf" from sensor_0s
+
+
+# =~/给定字段/ 包含指定字段的
+select * from test where monitor_name=~/^app/;
+
+# fill fill(100) fill(previous) fill(linear)
+SELECT MAX("water_level") FROM "h2o_feet" WHERE location = 'coyote_creek' GROUP BY time(12m) fill(previous);
+
+# export
+influxd backup -database gimc-perf -host ts-uf668p5xos953ygfo.influxdata.tsdb.aliyuncs.com:8088 -username grundfos -password Ab123456 -start 2023-08-15T20:00:00Z -end 2023-08-15T20:10:00Z ts
 ```
