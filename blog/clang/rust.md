@@ -31,3 +31,18 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 rustup update
 ```
 
+# wasm
+
+```shell
+# install wasmtime
+curl https://wasmtime.dev/install.sh -sSf | bash
+
+fn main() {
+    println!("Hello, world!");
+}
+
+rustup target add wasm32-wasi
+rustc hello.rs --target wasm32-wasi
+wasmtime hello.wasm
+# Hello, world!
+```
