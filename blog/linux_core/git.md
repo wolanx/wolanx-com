@@ -78,11 +78,12 @@ fi
 
 ### 设置
 
-```sh
+```shell
 git remote add origin https://git.oschina.net/zhaoyujie/www.825407762.com.git
 git push -u origin master
 
-git checkout --orphan empty_branch
+git checkout --orphan gh-pages
+git push origin gh-pages
 
 #buffer
 git config --list
