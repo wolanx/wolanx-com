@@ -27,7 +27,8 @@ https://rustup.rs/
 # linux macos
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 
-# update
+# update 自更新
+rustc -V
 rustup update
 ```
 
