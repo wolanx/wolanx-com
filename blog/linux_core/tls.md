@@ -34,9 +34,9 @@ openssl x509 -req -days 3650 -in ssl.csr -signkey private.key -out ssl.crt # 证
 openssl pkcs12 -export -inkey private.key -in ssl.crt -out ssl.pfx
 
 ## pfx renew crt
-openssl pkcs12 -in ept-activemq.pfx -nocerts -out ept-activemq.key -nodes
+openssl pkcs12 -in a.pfx -nocerts -out a.key -nodes
 # copy crt to here
-openssl pkcs12 -export -out ept-activemq.pfx -inkey ept-activemq.key -in ept-activemq.crt
+openssl pkcs12 -export -out b.pfx -inkey a.key -in b.crt # or b.pem
 ```
 
 # window pfx => https
