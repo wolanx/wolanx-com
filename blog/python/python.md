@@ -24,6 +24,14 @@ index-url=https://mirrors.aliyun.com/pypi/simple/
 EOF
 ```
 
+```text
+[global]
+index-url=http://mirrors.cloud.aliyuncs.com/pypi/simple/
+
+[install]
+trusted-host=mirrors.cloud.aliyuncs.com
+```
+
 ## @deprecated
 
 warnings.warn("弃用", DeprecationWarning)

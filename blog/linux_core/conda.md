@@ -1,7 +1,7 @@
 ---
 title: conda init
 date: 2023-02-23
-tags: [linux]
+tags: [ linux ]
 ---
 
 ## cuda install
@@ -35,6 +35,15 @@ sh Anaconda3-2022.10-Linux-x86_64.sh
 # /etc/conda
 # conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
 # conda install cuda -c nvidia
+```
+
+## conda update
+
+```shell
+conda -V
+conda update -n base conda
+conda update --all
+conda install python=3.11
 ```
 
 ## uninstall
