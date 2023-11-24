@@ -114,6 +114,8 @@ docker system prune -f
 
 docker image prune
 docker image prune -a --filter "until=72h"
+docker rmi $(docker images | grep "gimc-code" | awk '{print $3}') 
+
 docker container prune -a --filter "until=72h"
 docker volume prune --filter "label!=keep"
 docker network prune --filter "until=24h"
