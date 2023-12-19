@@ -11,6 +11,6 @@ tags: [ ml ]
 
 ```shell
 # pip install tensorboard
-tensorboard --logdir ./lightning_logs
+tensorboard --logdir ./lightning_logs --host=0.0.0.0
 # http://localhost:6006/
 ```

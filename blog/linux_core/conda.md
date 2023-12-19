@@ -72,18 +72,3 @@ cat /proc/driver/nvidia/version # 检查驱动版本
 
 nvidia-smi
 ```
-
-## demo
-
-```shell
-cat > config.json
-{
-  "NotebookApp": {
-    "password": "argon2:$argon2id$v=19$m=10240,t=10,p=8$TvqWSGeQsqj2qsztGA7rmw$k0YNPHZM/u8V67dVVst9pw"
-  }
-}
-pwd: 1~8
-notebook --ip=0.0.0.0 --port=5000 --allow-root --config=./config.json
-nohup jupyter notebook --ip=0.0.0.0 --port=5000 --allow-root --config=./config.json &
-http://10.231.9.124:5000/tree
-```
