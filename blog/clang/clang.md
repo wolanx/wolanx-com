@@ -8,6 +8,23 @@ tags: [clang]
 
 - 深入浅出让你理解什么是LLVM https://www.jianshu.com/p/1367dad95445
 
+## install
+
+```shell
+# https://releases.llvm.org/download.html
+
+# windows
+winget.exe install LLVM.LLVM
+# LIBCLANG_PATH=D:\programs\LLVM\bin
+
+# Debian-based Linuxes
+apt install llvm-dev libclang-dev clang
+
+# mac
+brew install llvm
+port install clang
+```
+
 ### 命令
 
 ```shell

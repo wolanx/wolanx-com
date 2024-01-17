@@ -1,7 +1,7 @@
 ---
 title: rust
 date: 2019-10-31T20:43:41+08:00
-tags: [rust]
+tags: [ rust ]
 ---
 
 - [x] 官网 https://www.rust-lang.org/zh-CN/learn
@@ -32,7 +32,23 @@ rustc -V
 rustup update
 ```
 
-# wasm
+# 交叉编译
+
+## win => linux
+
+```shell
+rustup target list # (installed)
+rustup target add x86_64-unknown-linux-musl
+cargo build --target x86_64-unknown-linux-gnu
+```
+
+```toml title="~/.cargo/config.toml"
+# ~/.cargo/config.toml
+[target.x86_64-unknown-linux-musl]
+linker = "rust-lld"
+```
+
+## wasm
 
 ```shell
 # install wasmtime
@@ -47,3 +63,8 @@ rustc hello.rs --target wasm32-wasi
 wasmtime hello.wasm
 # Hello, world!
 ```
+
+# bind clang
+
+- Rust与C/C++混合编程 https://zhuanlan.zhihu.com/p/622405994
+- bindgen https://rust-lang.github.io/rust-bindgen/introduction.html

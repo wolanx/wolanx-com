@@ -127,8 +127,8 @@ git log --author="zhaoyujie" --pretty=tformat: --numstat -- ./app/assets/less ./
 
 ### 小命令
 
-```text
-// 获取 gitid
+```shell
+# 获取 gitid
 git rev-parse HEAD
 git rev-parse --short HEAD
 ```
