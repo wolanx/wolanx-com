@@ -68,3 +68,19 @@ wasmtime hello.wasm
 
 - Rust与C/C++混合编程 https://zhuanlan.zhihu.com/p/622405994
 - bindgen https://rust-lang.github.io/rust-bindgen/introduction.html
+
+## vcpkg windows
+
+> C++ Library Manager for Windows, Linux, and MacOS
+
+```shell
+# ~/.vcpkg-clion
+# git set https://stackoverflow.com/a/70942119
+git clone --progress https://github.com/microsoft/vcpkg vcpkg
+# git fetch --unshallow
+# run ./bootstrap-vcpkg.sh
+
+export VCPKG_ROOT="C:\Users\106006\.vcpkg-clion\vcpkg"
+vcpkg search openssl
+vcpkg install openssl
+```

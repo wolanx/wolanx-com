@@ -15,11 +15,12 @@ tar --strip-components 1 -xzvf node-v* -C /usr
 
 ## proxy
 
-```sh
-npm config set registry http://registry.npm.taobao.org --global
-npm config set disturl http://npm.taobao.org/dist --global
-npm i -g yarn
-yarn config set registry https://registry.npm.taobao.org/
+```shell
+#npm config set registry http://registry.npm.taobao.org --global
+#npm config set disturl http://npm.taobao.org/dist --global
+npm config set registry http://registry.npmmirror.com
+npm install -g yarn
+yarn config set "strict-ssl" false -g
 yarn
 ```
 
