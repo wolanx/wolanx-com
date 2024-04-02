@@ -21,11 +21,15 @@ Cargo：Rust 的构建工具和包管理器
 # install
 
 ```shell
-# windows
-https://rustup.rs/
+# proxy bash
+echo 'export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup' >> ~/.bash_profile
+echo 'export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup' >> ~/.bash_profile
 
 # linux macos
-curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# windows
+https://rustup.rs/
 
 # update 自更新
 rustc -V
@@ -39,7 +43,10 @@ rustup update
 ```shell
 rustup target list # (installed)
 rustup target add x86_64-unknown-linux-musl
-cargo build --target x86_64-unknown-linux-gnu
+
+# musl 静态编译 lld statically linked
+apt install musl-tools -y # 核心
+cargo build --target x86_64-unknown-linux-musl
 ```
 
 ```toml title="~/.cargo/config.toml"
