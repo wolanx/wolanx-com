@@ -31,9 +31,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # windows
 https://rustup.rs/
 
-# update 自更新
+# rust update 自更新
 rustc -V
 rustup update
+
+# dep update
+cargo update
 ```
 
 # 交叉编译

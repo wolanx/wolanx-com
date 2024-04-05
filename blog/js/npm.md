@@ -59,7 +59,8 @@ yarn link # lib path
 yarn link @wolanx/react-netron # proj path
 yarn unlink @wolanx/react-netron # proj path
 
-
+yarn upgrade @tauri-apps/cli @tauri-apps/api --latest
+yarn upgrade-interactive --latest
 ```
 
 # esbuild
