@@ -14,3 +14,5 @@ tags: [tool]
 npm install -g gitbook
 npm install -g gitbook-cli
 ```
+
+弃用，goto mdbook
