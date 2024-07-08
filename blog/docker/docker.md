@@ -113,8 +113,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 docker system prune -f
 
 docker image prune
-docker image prune -a --filter "until=72h"
-docker rmi $(docker images | grep "gimc-code" | awk '{print $3}') 
+docker image prune -a --filter "until=72h" --filter ""
+docker images | grep 'registry.cn' | awk '{print $3}' | xargs docker image rm
+docker rmi $(docker images | grep "gimc-code" | awk '{print $3}')
 
 docker container prune -a --filter "until=72h"
 docker volume prune --filter "label!=keep"
