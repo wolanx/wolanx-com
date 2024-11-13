@@ -51,7 +51,9 @@ kill -SIGHUP $(pidof dockerd)
 ```shell
 cat > /etc/docker/daemon.json << EOF
 {
-  "registry-mirrors": ["https://registry.docker-cn.com"],
+  "registry-mirrors": [
+    "https://registry.docker-cn.com"
+  ],
   "log-opts": {"max-size": "500m", "max-file": "2"}
 }
 EOF
@@ -112,14 +114,14 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 ```shell
 docker system prune -f
 
-docker image prune
-docker image prune -a --filter "until=72h" --filter ""
-docker images | grep 'registry.cn' | awk '{print $3}' | xargs docker image rm
-docker rmi $(docker images | grep "gimc-code" | awk '{print $3}')
-
 docker container prune -a --filter "until=72h"
 docker volume prune --filter "label!=keep"
 docker network prune --filter "until=24h"
+
+docker image prune
+docker image prune --filter "dangling=true"
+docker image prune -a --filter "until=72h"
+docker rmi $(docker images | grep "gimc-code" | tail -n +20 | awk '{print $3}')
 ```
 
 ### image proxy
