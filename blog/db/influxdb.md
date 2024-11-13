@@ -79,3 +79,33 @@ SELECT MAX("water_level") FROM "h2o_feet" WHERE location = 'coyote_creek' GROUP 
 # export
 influxd backup -database gimc-perf -host ts-uf668p5xos953ygfo.influxdata.tsdb.aliyuncs.com:8088 -username grundfos -password Ab123456 -start 2023-08-15T20:00:00Z -end 2023-08-15T20:10:00Z ts
 ```
+
+## copy into
+
+```shell
+select SNO,c,d,e from sensor_0s where SNO = 'iot-echo-changqing-heatex_1bu' and time > now() - 5m;
+select SNO,c,d,e into sensor_test from sensor_0s where SNO = 'iot-echo-changqing-heatex_1bu' and time > now() - 5m;
+
+select SNO,c,d,e from sensor_test where SNO = 'iot-echo-changqing-heatex_1bu' and time > now() - 1h;
+
+select SNO='hahahah',c,d,e into sensor_test from sensor_0s where SNO = 'iot-echo-changqing-heatex_1bu' and time > now() - 5m;
+select SNO,c,d,e from sensor_test where SNO = 'iot-echo-changqing-heatex_1bu' and time > now() - 1h;
+```
+
+## ddl
+
+```shell
+# delete table
+drop measurement sensor_test
+
+show measurements
+```
+
+## import csv
+
+```shell
+cat /z/data/${tt}.csv | awk -F',' '{printf "sensor_0s,SNO=%s %s=%s %s\n", $3, $1, $4, $2}' >> /z/data/${tt}.sql
+# cat /z/data/${tt}.txt | awk -F',' '{printf "sensor_0s,SNO=%s value=%s %s\n", $3, $1, $4, $2}' > /z/data/${tt}.sql
+# cat /z/data/${tt}.txt | awk -F',' '{gsub(/value/, $1); printf "sensor_0s,%s\n", $2'} >> /z/data/${tt}.sql
+influx -ssl -host ts-uf68z3on142991o8b.influxdata.tsdb.aliyuncs.com -port 8086 -username grundfos -password Ab123456 -import -precision=s -path=datarrr.txt
+```

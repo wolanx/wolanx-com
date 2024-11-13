@@ -4,16 +4,30 @@ date: 2021-06-18
 tags: [linux]
 ---
 
+## version
+
+```shell
+# cat /etc/os-release 
+PRETTY_NAME="Debian GNU/Linux 12 (bookworm)"
+NAME="Debian GNU/Linux"
+VERSION_ID="12"
+VERSION="12 (bookworm)"
+VERSION_CODENAME=bookworm
+```
+
 ## 加速
 ```shell
 # backup
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
-sed 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
-sed 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 
-# run
+# run 10
 sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+apt-get update -y
+
+# run 12 (bookworm)
+sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
+sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
 apt-get update -y
 ```
 

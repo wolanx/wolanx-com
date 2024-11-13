@@ -1,7 +1,7 @@
 ---
 title: k8s
 date: 2019-10-10
-tags: [docker]
+tags: [ docker ]
 ---
 
 ## auth api
@@ -29,7 +29,25 @@ k get rolebinding
 /var/lib/kubelet/pods/{}/volumes/kubernetes.io~empty-dir/log
 ```
 
+## ingress gzip
+
+```shell
+# configmap nginx-configuration add
+use-gzip: true
+```
+
+## ingress limit
+
+```yaml
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/limit-rpm: "1000"
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: "1"
+```
+
 ## pvc
+
 ```yml
 volumes:
   - name: mypd
