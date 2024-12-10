@@ -65,6 +65,15 @@ kubectl -nzx5435 expose deployment air-ticket --type=LoadBalancer --name=my-serv
 kubectl -nccm-perf create configmap mq-conf --from-file=activemq
 ```
 
+## resource list
+
+```shell
+k get pods -o json | \
+    jq '.items[] | {name: .metadata.name, namespace: .metadata.namespace, containers: .spec.containers[] | {name: .name, resources: .resources}}' | \
+    jq -r '[.name, .namespace, .containers.name, .containers.resources.requests.cpu, .containers.resources.limits.cpu, .containers.resources.requests.memory, .containers.resources.limits.memory] | @tsv' | \
+    column -t -s $'\t'
+```
+
 ## kustomize
 
 ### kubectl builtins

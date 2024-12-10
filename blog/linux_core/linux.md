@@ -402,8 +402,11 @@ linux命令：cat /proc/cpuinfo
 
 # column
 
-```
+```shell
 cat  $(find . -name 310.html) | column -s',' -t
+
+# 解决不对齐
+cat  $(find . -name 310.html) | column -t -s $'\t'
 ```
 
 # hostname
