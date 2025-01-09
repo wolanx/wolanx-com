@@ -32,7 +32,10 @@ yum makecache #生产本地缓存
 
 # epel 加好多rpm
 
+```shell
 yum install -y epel-release
+amazon-linux-extras install epel # amazon-linux
+```
 
 # 常用必装
 
@@ -41,6 +44,7 @@ yum install -y yum-utils	# yum-config-manager --add-repo
 yum install -y htop
 yum install -y tree
 yum install -y net-tools	# netstat -ntlp
+yum install iputils         # ping
 ```
 
 ## 其他

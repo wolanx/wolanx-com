@@ -37,6 +37,7 @@ docker-compose exec php crontab -l
 
 # min   hour    day     month   weekday command
 5       1       *       *       *       docker rmi $(docker images | grep "gimc-code" | tail -n +20 | awk '{print $3}')
+5       1       *       *       *       docker image prune -f
 ```
 
 ## 常用

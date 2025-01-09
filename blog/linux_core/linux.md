@@ -90,14 +90,18 @@ find . -name "*.py" | xargs -I name sh -c 'echo "\"\"\"@copyright {name}\"\"\"" 
 find . -name "*.js" | xargs -I name sh -c 'echo "\"\"\"@copyright {name}\"\"\"" ; cat name ; echo -e "\n\n\n\n"' > ~
 /Desktop/b.txt
 
-## iftop 图看io
+## iftop 图看 net-io
 
 ```sh
-https://www.vpser.net/manage/iftop.html
+# https://www.vpser.net/manage/iftop.html
 yum install -y iftop
 
+# 5m 为背景长度
 iftop -m 5m
+# then p S o
+```
 
+```text
 TX:     发送流量
 RX:     接收流量
 TOTAL:  总流量
