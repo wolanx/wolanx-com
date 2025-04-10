@@ -122,6 +122,9 @@ docker image prune
 docker image prune --filter "dangling=true"
 docker image prune -a --filter "until=72h"
 docker rmi $(docker images | grep "gimc-code" | tail -n +20 | awk '{print $3}')
+
+crictl rm $(crictl ps -aq)
+crictl rmi --prune
 ```
 
 ### image proxy
