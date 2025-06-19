@@ -72,3 +72,10 @@ curl -i google.com
 unset http_proxy
 unset https_proxy
 ```
+
+
+## ssh forward use proxy rule
+
+```js
+
+```
