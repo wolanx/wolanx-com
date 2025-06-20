@@ -77,5 +77,24 @@ unset https_proxy
 ## ssh forward use proxy rule
 
 ```js
-
+// clash mixin
+// ssh -i ~/Desktop/kc/id_rsa_yjzhao-d -D 10086 yjzhao@jumphost-d.grundfos.cn -N
+module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
+    // return content
+    content.proxies.push({
+        name: "my-socks5",
+        type: 'socks5',
+        server: '127.0.0.1',
+        port: 10086,
+    })
+    const newRules = [
+        "DOMAIN-SUFFIX,rds.aliyuncs.com,my-socks5",
+        "DOMAIN-SUFFIX,influxdata.tsdb.aliyuncs.com,my-socks5",
+        "DOMAIN-SUFFIX,cn-shanghai-internal.aliyuncs.com,my-socks5",
+        "IP-CIDR,10.231.0.0/16,my-socks5",
+    ]
+    content.rules = [...newRules, ...content.rules]
+    
+    return content
+}
 ```
