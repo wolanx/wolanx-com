@@ -43,6 +43,9 @@ lsof -n -P -i TCP -s TCP:LISTEN
 ## netstat
 
 ```
+# tcp udp listen dns process
+sudo ss -tulnp
+
 yum install -y net-tools
 netstat -nltp # 查看 ip
 
