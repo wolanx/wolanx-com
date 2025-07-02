@@ -13,20 +13,13 @@ tags: [ docker ]
 
 ## install
 
-### centos
-
-```shell
-sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-yum list docker-ce --showduplicates | sort -r
-sudo yum install -y docker-ce
-```
+- doc https://docs.docker.com/engine/install/debian
 
 ### debian
 
 ```shell
 # Debian Bullseye 11 (stable)
 # Debian Buster 10 (oldstable)
-# https://docs.docker.com/engine/install/debian/
 apt-get install ca-certificates curl gnupg lsb-release
 mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -148,4 +141,11 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.16.0 gc
 # https://github.com/bcicen/ctop
 sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
+```
+
+## image import export
+
+```shell
+docker save -o ubuntu_20.04.tar ubuntu:20.04
+docker load -i ubuntu_20.04.tar
 ```

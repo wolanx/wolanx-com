@@ -22,14 +22,26 @@ export ALL_PROXY="http://$host_ip:7890"
 export ALL_PROXY="http://127.0.0.1:7890"
 ```
 
-## trojan
+## clash-verge 新版 gui
 
-https://github.com/trojan-gfw/trojan/releases
-tar -xvf trojan-1.16.0-linux-amd64.tar.xz
+- download https://github.com/clash-verge-rev/clash-verge-rev
 
-"cert": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem",
+## Clash.Meta(改名为mihomo)
 
-## docker
+- download https://github.com/MetaCubeX/mihomo
+- setting https://wiki.metacubex.one/startup/service/#systemd
+- log journalctl -u mihomo -o cat -f
+
+### config.yaml
+```yaml
+mixed-port: 7890
+allow-lan: true
+external-ui: public
+external-controller: 0.0.0.0:9090
+secret: 123456
+```
+
+## clash-docker
 
 - api https://clash.wiki/runtime/external-controller.html
 - dashboard http://localhost:17890/ui/#/proxies
@@ -74,7 +86,7 @@ unset https_proxy
 ```
 
 
-## ssh forward use proxy rule
+## proxy rule via ssh forward
 
 ```js
 // clash mixin
