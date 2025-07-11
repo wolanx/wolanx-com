@@ -8,9 +8,11 @@ tags:
 # doc
 
 ```sh
-
 # 所有的 service
 systemctl list-units --type=service
+service --status-all
+
+systemctl daemon-reload
 
 # 看日志
 journalctl -u k3s -f

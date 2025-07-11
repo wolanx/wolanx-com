@@ -16,6 +16,7 @@ VERSION_CODENAME=bookworm
 ```
 
 ## 加速
+
 ```shell
 # backup
 cp /etc/apt/sources.list /etc/apt/sources.list.bak
@@ -26,9 +27,43 @@ sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
 apt-get update -y
 
 # run 12 (bookworm)
-sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
-sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources
+sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/debian.sources.bak
 apt-get update -y
+```
+
+### debian 12 bookworm
+
+- doc https://mirrors.tuna.tsinghua.edu.cn/help/debian
+- demo /etc/apt/sources.list.d/debian.sources
+
+```text
+Types: deb
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+Suites: bookworm bookworm-updates bookworm-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+# Types: deb-src
+# URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+# Suites: bookworm bookworm-updates bookworm-backports
+# Components: main contrib non-free non-free-firmware
+# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+Types: deb
+URIs: https://security.debian.org/debian-security
+Suites: bookworm-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# Types: deb-src
+# URIs: https://security.debian.org/debian-security
+# Suites: bookworm-security
+# Components: main contrib non-free non-free-firmware
+# Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 ```
 
 ## common
