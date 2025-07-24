@@ -60,7 +60,7 @@ services:
     volumes:
       - .:/root/.config/clash
     environment:
-      - TZ=utc-8
+      - TZ=Etc/GMT-8
 ```
 
 ```yaml title="docker-compose.yml"

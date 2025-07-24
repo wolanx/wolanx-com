@@ -43,7 +43,7 @@ services:
     volumes:
       - .:/root
     environment:
-      - TZ=utc-8
+      - TZ=Etc/GMT-8
       - JVM=-XX:+UseContainerSupport
       - REDIS_HOST=svc-redis
       - INFLUXDB_HOST=svc-influxdb
@@ -62,7 +62,7 @@ services:
     ports:
       - 8086:8086
     environment:
-      - TZ=utc-8
+      - TZ=Etc/GMT-8
       - INFLUXDB_ADMIN_USER=root
       - INFLUXDB_ADMIN_PASSWORD=root
       - INFLUXDB_DB=iothub

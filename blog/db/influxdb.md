@@ -25,7 +25,7 @@ svc-influxdb:
 	ports:
 		- 8086:8086
 	environment:
-		- TZ=utc-8
+		- TZ=Etc/GMT-8
 		- INFLUXDB_ADMIN_USER=root
 		- INFLUXDB_ADMIN_PASSWORD=root
 		- INFLUXDB_DB=iothub

@@ -76,12 +76,12 @@ docker exec -it --user=root 114 sh
 ```shell
 # docker-compose.yml
 environment:
-  - TZ=utc-8
+  - TZ=Etc/GMT-8
 
 # k8s.yml
 env:
   - name: TZ
-    value: "utc-8"
+    value: Etc/GMT-8
 
 # dpkg-reconfigure -f noninteractive tzdata
 apk add tzdata --no-cache \

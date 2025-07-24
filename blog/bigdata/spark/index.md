@@ -17,8 +17,8 @@ docker run -it apache/spark:python3 /opt/spark/bin/pyspark
 ## job
 
 ```shell
-docker run --restart=unless-stopped -it -d --name spark -p 4040:4040 -v $(pwd):/app -e TZ=utc-8 apache/spark:python3 tail -f
-docker run --restart=unless-stopped -it -d --name spark -p 4040:4040 -v $(pwd):/app -e TZ=utc-8 wolanx/spark /opt/spark/bin/spark-submit /app/test.py
+docker run --restart=unless-stopped -it -d --name spark -p 4040:4040 -v $(pwd):/app -e TZ=Etc/GMT-8 apache/spark:python3 tail -f
+docker run --restart=unless-stopped -it -d --name spark -p 4040:4040 -v $(pwd):/app -e TZ=Etc/GMT-8 wolanx/spark /opt/spark/bin/spark-submit /app/test.py
 
 # add jars
 cd /opt/spark/jars
