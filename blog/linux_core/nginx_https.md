@@ -2,7 +2,7 @@
 title: nginx https申请配置
 date: 2018-03-22 15:44:57
 tags:
-  - nginx
+  - ingress
 ---
 
 # https

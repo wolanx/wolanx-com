@@ -2,7 +2,7 @@
 title: nginx安装配置
 date: 2018-03-22 15:44:57
 tags: 
-- nginx
+  - ingress
 ---
 
 # 配置参考
