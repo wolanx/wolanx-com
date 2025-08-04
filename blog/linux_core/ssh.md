@@ -16,7 +16,11 @@ tags:
     openssl rsa -in ~/.ssh/id_zyj -outform pem > id_zyj.pem
     chmod 700 id_zyj.pem
 
-# autossh 内网穿透
+## install
+
+    apt-get install openssh-server
+
+## autossh 内网穿透
 
 https://www.cnblogs.com/kwongtai/p/6903420.html
 

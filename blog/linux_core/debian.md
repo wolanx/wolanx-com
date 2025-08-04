@@ -4,6 +4,10 @@ date: 2021-06-18
 tags: [linux]
 ---
 
+## install
+
+- https://mirrors.tuna.tsinghua.edu.cn/debian-cd/12.11.0-live/amd64/iso-hybrid/
+
 ## version
 
 ```shell

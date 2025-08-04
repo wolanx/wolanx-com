@@ -13,7 +13,7 @@ tags: [ docker ]
 
 ## install
 
-- doc https://docs.docker.com/engine/install/debian
+- cli doc https://docs.docker.com/engine/install/debian
 
 ### debian
 
@@ -148,4 +148,24 @@ sudo chmod +x /usr/local/bin/ctop
 ```shell
 docker save -o ubuntu_20.04.tar ubuntu:20.04
 docker load -i ubuntu_20.04.tar
+
+# all export
+docker images --format "{{.Repository}}:{{.Tag}}" | grep -v "<none>" | xargs -I {} sh -c 'docker save -o $(echo {} | tr "/" "_" | tr ":" "_").tar  {}'
+scp ./* 172.16.14.190:/www/docker-images/
+
+# 检查 tar
+tar -tf mysql_5.7.42.tar
+
+# all import
+for file in *.tar; do docker load -i "$file"; done
+```
+
+## docker-slim safety
+
+- docker-slim https://github.com/slimtoolkit/slim
+
+```shell
+curl -sL https://raw.githubusercontent.com/slimtoolkit/slim/master/scripts/install-slim.sh | sudo -E bash -
+
+docker-slim build my-app
 ```
