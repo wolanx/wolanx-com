@@ -151,6 +151,7 @@ docker load -i ubuntu_20.04.tar
 
 # all export
 docker images --format "{{.Repository}}:{{.Tag}}" | grep -v "<none>" | xargs -I {} sh -c 'docker save -o $(echo {} | tr "/" "_" | tr ":" "_").tar  {}'
+docker images --format "{{.Repository}}:{{.Tag}}" | grep encrypted | xargs -I {} docker save -o {}.tar {} 
 scp ./* 172.16.14.190:/www/docker-images/
 
 # 检查 tar
