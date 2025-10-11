@@ -10,6 +10,7 @@ tags:
 ```sh
 # 所有的 service
 systemctl list-units --type=service
+systemctl list-units --type=service --state=running --no-pager
 service --status-all
 
 systemctl daemon-reload
