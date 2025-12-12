@@ -58,6 +58,17 @@ volumeMounts:
     mountPath: "/pvvv-test"
 ```
 
+```yml
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/dockerconfigjson
+metadata:
+  namespace: dsc-gimc-dev2
+  name: ali-image
+data:
+  .dockerconfigjson: xxx
+```
+
 ## helm
 
 ```shell

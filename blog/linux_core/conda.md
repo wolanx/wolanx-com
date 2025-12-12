@@ -37,6 +37,10 @@ sh Anaconda3-2022.10-Linux-x86_64.sh
 # conda install cuda -c nvidia
 ```
 
+$ source <CONDA_INSTALL_DIR>/bin/activate
+$ conda create -y -n <CONDA_NAME>
+$ conda activate <CONDA_NAME>
+
 ## conda update
 
 ```shell
