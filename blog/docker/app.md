@@ -10,7 +10,7 @@ tags: [docker]
 
 ```shell
 docker run -d --restart=unless-stopped --name portainer -p 1234:9000 -v "/var/run/docker.sock:/var/run/docker.sock" portainer/portainer:1.23.2
-docker run -d --restart=unless-stopped --name portainer -p 1234:9000 -v "/var/run/docker.sock:/var/run/docker.sock" portainer/portainer-ce:2.33.2-alpine
+docker run -d --restart=unless-stopped --name portainer -p 1234:9000 -v "/var/run/docker.sock:/var/run/docker.sock" portainer/portainer-ce:2.33.6-alpine
 # //./pipe/docker_engine
 # "hosts": ["tcp://0.0.0.0:2375"]
 server {

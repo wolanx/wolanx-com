@@ -13,11 +13,14 @@ tags: [ docker ]
 
 ## install
 
+- 清华大学开源软件镜像站 https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/
 - cli doc https://docs.docker.com/engine/install/debian
+- offline download https://download.docker.com/linux/debian/dists/bookworm/pool/stable/amd64/
 
 ### debian
 
 ```shell
+# Debian bookworm 12 (stable)
 # Debian Bullseye 11 (stable)
 # Debian Buster 10 (oldstable)
 apt-get install ca-certificates curl gnupg lsb-release

@@ -16,9 +16,19 @@ tags:
     openssl rsa -in ~/.ssh/id_zyj -outform pem > id_zyj.pem
     chmod 700 id_zyj.pem
 
-## install
 
-    apt-get install openssh-server
+## install sshd
+
+```shell
+apt-get install openssh-server
+
+# 修改ssh默认端口
+vim /etc/ssh/sshd_config
+# PermitRootLogin yes
+
+service sshd restart
+systemctl restart sshd
+```
 
 ## autossh 内网穿透
 
@@ -37,13 +47,6 @@ autossh -f -M 6023 -fCNR 6022:localhost:22 -p1022 root@101.132.77.68 # 远程ssh
 autossh -f -M 7002 -fCNR 7001:localhost:7003 -p1022 root@101.132.77.68
 autossh -f -M 7778 -fCNR 7777:localhost:777 root@101.132.151.41
 ```
-
-## 修改ssh默认端口
-
-    vi /etc/ssh/sshd_config
-    Port 1022
-	PermitRootLogin yes
-    service sshd restart
 
 # expect iterm 登录
 

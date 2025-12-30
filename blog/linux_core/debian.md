@@ -106,3 +106,51 @@ sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 apt update
 ```
+
+## ntp timezone
+
+```shell
+# 安装 systemd-timesyncd
+sudo apt update
+sudo apt install systemd-timesyncd
+
+# 启用并启动服务
+sudo systemctl enable systemd-timesyncd
+sudo systemctl start systemd-timesyncd
+
+# 检查状态
+sudo timedatectl set-ntp true
+sudo timedatectl status
+```
+
+## df -h
+
+```shell
+# 调整大小
+# 1. 切换到 root 并进入单用户模式
+sudo -i
+systemctl isolate rescue.target
+
+# 2. 卸载 /home
+umount /home
+
+# 3. 检查并修复文件系统
+e2fsck -f /dev/mapper/debian--vg-home
+
+# 4. 缩小 /home 逻辑卷（示例：缩小 200G，剩下约 650G）
+# 先缩小文件系统：
+resize2fs /dev/mapper/debian--vg-home 650G
+
+# 再缩小逻辑卷（必须与上面大小一致！）：
+lvreduce -L 650G /dev/mapper/debian--vg-home
+
+# 5. 扩展根分区
+# 扩展逻辑卷（+200G 或使用所有可用空间）：
+lvextend -l +100%FREE /dev/mapper/debian--vg-root
+
+# 扩展文件系统：
+resize2fs /dev/mapper/debian--vg-root
+
+mount -a # 6. 重新挂载
+reboot
+```
