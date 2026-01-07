@@ -121,6 +121,7 @@ sudo systemctl start systemd-timesyncd
 # 检查状态
 sudo timedatectl set-ntp true
 sudo timedatectl status
+sudo timedatectl set-timezone Asia/Shanghai
 ```
 
 ## df -h
