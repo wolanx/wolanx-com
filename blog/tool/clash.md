@@ -25,6 +25,23 @@ export ALL_PROXY="http://127.0.0.1:7890"
 ## clash-verge 新版 gui
 
 - download https://github.com/clash-verge-rev/clash-verge-rev
+- windows 便携版 https://github.com/clash-verge-rev/clash-verge-rev/releases/tag/v1.7.7
+
+## proxy to server
+
+```shell
+# 本地端口转发（常用）
+# -N：不执行远程命令，只做端口转发
+# -f：后台运行
+ssh -R 7897:127.0.0.1:7897 -N root@172.16.14.218
+curl --proxy http://127.0.0.1:7897 https://google.com
+
+vim /lib/systemd/system/docker.service
+
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:7897"
+Environment="HTTPS_PROXY=http://127.0.0.1:7897"
+```
 
 ## Clash.Meta(改名为mihomo)
 
