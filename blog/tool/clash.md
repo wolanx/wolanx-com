@@ -127,3 +127,31 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
     return content
 }
 ```
+
+### Script.js 订阅/全局扩展脚本
+
+C:\Users\admin\AppData\Roaming\io.github.clash-verge-rev.clash-verge-rev\profiles\Script.js
+
+```js
+const newRules = [
+  "DOMAIN-SUFFIX,claude.ai,Proxy",
+  "DOMAIN-SUFFIX,claude.com,Proxy",
+  "DOMAIN-SUFFIX,anthropic.com,Proxy",
+]
+
+function main(config, profileName) {
+  let oldRules = config.rules
+
+  config.proxies.forEach(proxy => {
+    proxy.udp = true
+  })
+
+  config.rules = [...newRules, ...config.rules]
+
+  console.log(profileName)
+  console.log('rules')
+  console.log(config.rules)
+
+  return config
+}
+```
