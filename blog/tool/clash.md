@@ -50,45 +50,13 @@ Environment="HTTPS_PROXY=http://127.0.0.1:7897"
 - log journalctl -u mihomo -o cat -f
 
 ### config.yaml
+
 ```yaml
 mixed-port: 7890
 allow-lan: true
 external-ui: public
 external-controller: 0.0.0.0:9090
 secret: 123456
-```
-
-## clash-docker
-
-- api https://clash.wiki/runtime/external-controller.html
-- dashboard http://localhost:17890/ui/#/proxies
-
-> cd /etc/clash
-
-```yaml title="docker-compose.yml"
-version: "3"
-services:
-  svc-clash:
-    image: dreamacro/clash
-    restart: always
-    ports:
-      - "7890:7890"
-      - "17890:9090"
-    volumes:
-      - .:/root/.config/clash
-    environment:
-      - TZ=Etc/GMT-8
-```
-
-```yaml title="docker-compose.yml"
-mixed-port: 7890
-allow-lan: true
-external-controller: 0.0.0.0:9090
-external-ui: /root/.config/clash/ui
-
-#secret: bb975c61-c6b6-4ffe-9a22-0f5d00d7342e
-
-# 后半段 copy windows profiles 里的内容
 ```
 
 ```shell
@@ -133,25 +101,34 @@ module.exports.parse = ({ content, name, url }, { yaml, axios, notify }) => {
 C:\Users\admin\AppData\Roaming\io.github.clash-verge-rev.clash-verge-rev\profiles\Script.js
 
 ```js
+const newProxies = [
+    {name: "my-dev2", type: "socks5", server: "127.0.0.1", port: 10084},
+]
 const newRules = [
-  "DOMAIN-SUFFIX,claude.ai,Proxy",
-  "DOMAIN-SUFFIX,claude.com,Proxy",
-  "DOMAIN-SUFFIX,anthropic.com,Proxy",
+    "DOMAIN-SUFFIX,claude.ai,Proxy",
+    "DOMAIN-SUFFIX,claude.com,Proxy",
+    "DOMAIN-SUFFIX,anthropic.com,Proxy",
+    // ali
+    "DOMAIN-SUFFIX,rds.aliyuncs.com,my-dev2",
+    "DOMAIN-SUFFIX,influxdata.tsdb.aliyuncs.com,my-dev2",
+    "DOMAIN-SUFFIX,cn-shanghai-internal.aliyuncs.com,my-dev2",
+    "IP-CIDR,10.231.0.0/16,my-dev2",
+    "IP-CIDR,10.10.0.0/16,my-dev2",
 ]
 
 function main(config, profileName) {
-  let oldRules = config.rules
+    let oldRules = config.rules
+    
+    config.proxies.forEach(proxy => {
+        proxy.udp = true
+    })
+    config.proxies = [...newProxies, ...config.proxies]
 
-  config.proxies.forEach(proxy => {
-    proxy.udp = true
-  })
-
-  config.rules = [...newRules, ...config.rules]
-
-  console.log(profileName)
-  console.log('rules')
-  console.log(config.rules)
-
-  return config
+    config.rules = [...newRules, ...config.rules]
+    
+    console.log(profileName, 'proxies')
+    console.log(newProxies)
+    
+    return config
 }
 ```
