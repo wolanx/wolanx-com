@@ -53,6 +53,18 @@ cat > /etc/docker/daemon.json << EOF
   "log-opts": {"max-size": "500m", "max-file": "2"}
 }
 EOF
+
+
+{
+  "bip": "172.50.0.1/16",
+  "default-address-pools": [
+    {
+      "base": "172.60.0.0/16",
+      "size": 24
+    }
+  ]
+}
+
 ```
 
 ```json
