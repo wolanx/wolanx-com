@@ -33,7 +33,7 @@ export ALL_PROXY="http://127.0.0.1:7890"
 # 本地端口转发（常用）
 # -N：不执行远程命令，只做端口转发
 # -f：后台运行
-ssh -R 7897:127.0.0.1:7897 -N root@172.16.14.218
+ssh -R 7897:127.0.0.1:7897 -N root@192.168.10.112
 curl --proxy http://127.0.0.1:7897 https://google.com
 
 vim /lib/systemd/system/docker.service

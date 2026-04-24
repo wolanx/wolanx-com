@@ -36,6 +36,18 @@ trusted-host=mirrors.cloud.aliyuncs.com
 
 warnings.warn("弃用", DeprecationWarning)
 
+## uv
+
+```shell
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.local/bin/env
+
+uv python install 3.12
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 ## venv
 
 ```shell
