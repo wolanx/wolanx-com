@@ -19,6 +19,7 @@ winget.exe install LLVM.LLVM
 
 # Debian-based Linuxes
 apt install llvm-dev libclang-dev clang
+apt install -y llvm clang lldb
 
 # mac
 brew install llvm

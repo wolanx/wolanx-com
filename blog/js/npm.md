@@ -8,7 +8,12 @@ tags:
 # install
 
 ```shell
-#官方编译过的二进制数据包安装
+# 添加 NodeSource 仓库
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+apt install -y nodejs
+npm install -g npm@11.13.0
+
+# 官方编译过的二进制数据包安装
 wget https://nodejs.org/download/release/latest-v12.x/node-v12.13.1-linux-x64.tar.gz
 tar --strip-components 1 -xzvf node-v* -C /usr
 ```
