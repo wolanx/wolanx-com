@@ -9,6 +9,14 @@ tags:
 
 - [x] 10 个例子教你学会 ncat (nc) 命令 https://linux.cn/article-9190-1.html
 
+## 看 一个端口 通不通
+
+```shell
+# telnet 192.168.1.10 80
+$ nc -zv 10.182.124.171 5432
+Connection to 10.182.124.171 5432 port [tcp/postgresql] succeeded!
+```
+
 ## 2台机器互传text
 
 ```sh
