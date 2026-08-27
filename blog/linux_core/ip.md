@@ -14,6 +14,14 @@ ip route del default
 ip route add 172.0.0.0/8 via 192.168.1.1 dev eth1
 # 默认路由走公网
 ip route add default via 10.0.0.1 dev eth2
+
+
+ip route del default
+
+# 172.0.0.0/8 指定网卡1
+ip route add 172.0.0.0/8 via 192.168.1.1 dev eth1
+# 默认路由走公网
+ip route add default via 192.168.91.1 dev myusb
 ```
 
 ## ip route add 持久化
