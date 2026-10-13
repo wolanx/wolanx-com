@@ -41,6 +41,9 @@ vim /lib/systemd/system/docker.service
 [Service]
 Environment="HTTP_PROXY=http://127.0.0.1:7897"
 Environment="HTTPS_PROXY=http://127.0.0.1:7897"
+
+systemctl daemon-reload
+service docker restart
 ```
 
 ## Clash.Meta(改名为mihomo)
